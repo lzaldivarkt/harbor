@@ -201,6 +201,6 @@ func constructReplicationPayload(event *event.ReplicationEvent) (*model.Payload,
 }
 
 func getMetadataFromResource(resource string) (namespace, nameAndTag string) {
-	meta := strings.Split(resource, "/")
+	meta := strings.SplitN(resource, "/", 2)
 	return meta[0], meta[1]
 }
